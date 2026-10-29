@@ -1,0 +1,16 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.env
+.env.local
+*.sqlite3
+db.sqlite3
+venv/
+.venv/
+dist/
+build/
+*.egg-info/
+.DS_Store
+Thumbs.db
+package-lock.json

@@ -1,0 +1,380 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ========================================================================
+   PAYROLL MANAGEMENT SYSTEM — Design Token System
+   60-30-10 Enterprise HR Palette (Professional & Trustworthy)
+   ======================================================================== */
+
+/* ---------- Light Mode Tokens ---------- */
+:root {
+  /* 60% — Dominant: Canvas & Card Backgrounds */
+  --background: #F9FAFB;
+  --background-card: #FFFFFF;
+  --background-elevated: #FFFFFF;
+  --background-muted: #F3F4F6;
+  --background-subtle: #E5E7EB;
+
+  /* 30% — Secondary: Structure, Sidebar, Typography */
+  --foreground: #111827;
+  --foreground-secondary: #374151;
+  --foreground-muted: #64748B;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --foreground-inverse: #FFFFFF;
+
+  /* Slate & Warm Coral Enterprise Palette */
+  --sidebar-bg: #1E232A;
+  --sidebar-bg-hover: #282E37;
+  --sidebar-bg-active: #2D343E;
+  --sidebar-text: #94A3B8;
+  --sidebar-text-active: #FFFFFF;
+  --sidebar-icon: #64748B;
+  --sidebar-icon-active: #F97316;
+  --sidebar-border: #282E37;
+  --sidebar-section-label: #64748B;
+
+  --header-bg: #FFFFFF;
+  --header-border: #E2E8F0;
+
+  /* Primary: Clean, refined Coral (#EA580C) */
+  --primary: #EA580C;
+  --primary-hover: #C2410C;
+  --primary-light: #FFEDD5;
+  --primary-foreground: #FFFFFF;
+
+  --accent: #F97316;
+  --accent-hover: #EA580C;
+  --accent-light: #FFF7ED;
+
+  --warning: #F59E0B;
+  --warning-hover: #D97706;
+  --warning-light: #FEF3C7;
+  --warning-foreground: #78350F;
+
+  --success: #10B981;
+  --success-hover: #059669;
+  --success-light: #ECFDF5;
+  --success-foreground: #047857;
+
+  --destructive: #EF4444;
+  --destructive-hover: #DC2626;
+  --destructive-light: #FEF2F2;
+  --destructive-foreground: #B91C1C;
+
+  --info: #0284C7;
+  --info-light: #E0F2FE;
+
+  /* Borders & Rings */
+  --border: #E5E7EB;
+  --border-strong: #D1D5DB;
+  --ring: #C2410C;
+  --ring-offset: #FFFFFF;
+
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #E5E7EB;
+  --input-focus-border: #C2410C;
+  --input-placeholder: #9CA3AF;
+
+  /* Badge & Status */
+  --badge-draft: #6B7280;
+  --badge-draft-bg: #F3F4F6;
+  --badge-reviewed: #0284C7;
+  --badge-reviewed-bg: #E0F2FE;
+  --badge-approved: #16A34A;
+  --badge-approved-bg: #DCFCE7;
+  --badge-finalized: #7C3AED;
+  --badge-finalized-bg: #EDE9FE;
+  --badge-rejected: #DC2626;
+  --badge-rejected-bg: #FEE2E2;
+
+  /* Table */
+  --table-header-bg: #F9FAFB;
+  --table-header-text: #4B5563;
+  --table-row-hover: #F9FAFB;
+  --table-row-stripe: #F9FAFB;
+  --table-border: #E5E7EB;
+
+  /* Scrollbar */
+  --scrollbar-track: #F3F4F6;
+  --scrollbar-thumb: #D1D5DB;
+  --scrollbar-thumb-hover: #9CA3AF;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+}
+
+/* ---------- Dark / Pro Mode Tokens ---------- */
+[data-theme="dark"] {
+  --background: #0F172A;
+  --background-card: #1E293B;
+  --background-elevated: #243247;
+  --background-muted: #1E293B;
+  --background-subtle: #334155;
+
+  --foreground: #F8FAFC;
+  --foreground-secondary: #CBD5E1;
+  --foreground-muted: #94A3B8;
+  --muted: #1E293B;
+  --muted-foreground: #94A3B8;
+  --foreground-inverse: #0F172A;
+
+  --sidebar-bg: #0B1120;
+  --sidebar-bg-hover: #162032;
+  --sidebar-bg-active: #1A2942;
+  --sidebar-text: #94A3B8;
+  --sidebar-text-active: #FFFFFF;
+  --sidebar-icon: #64748B;
+  --sidebar-icon-active: #60A5FA;
+  --sidebar-border: #1E293B;
+  --sidebar-section-label: #475569;
+
+  --header-bg: #1E293B;
+  --header-border: #334155;
+
+  --primary: #60A5FA;
+  --primary-hover: #3B82F6;
+  --primary-light: #1E3A5F;
+  --primary-foreground: #0F172A;
+
+  --accent: #60A5FA;
+  --accent-hover: #3B82F6;
+  --accent-light: #1E3A5F;
+
+  --warning-light: #422006;
+  --success-light: #064E3B;
+  --destructive-light: #450A0A;
+  --info-light: #1E3A5F;
+
+  --border: #334155;
+  --border-strong: #475569;
+  --ring: #60A5FA;
+  --ring-offset: #0F172A;
+
+  --input-bg: #1E293B;
+  --input-border: #475569;
+  --input-focus-border: #60A5FA;
+  --input-placeholder: #64748B;
+
+  --badge-draft-bg: #334155;
+  --badge-reviewed-bg: #1E3A5F;
+  --badge-approved-bg: #064E3B;
+  --badge-finalized-bg: #2E1065;
+  --badge-rejected-bg: #450A0A;
+
+  --table-header-bg: #1E293B;
+  --table-header-text: #CBD5E1;
+  --table-row-hover: #243247;
+  --table-row-stripe: #1A2536;
+  --table-border: #334155;
+
+  --scrollbar-track: #1E293B;
+  --scrollbar-thumb: #475569;
+  --scrollbar-thumb-hover: #64748B;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Tailwind v4 @theme Registration ---------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-background-card: var(--background-card);
+  --color-background-elevated: var(--background-elevated);
+  --color-background-muted: var(--background-muted);
+  --color-background-subtle: var(--background-subtle);
+
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-muted: var(--background-muted);
+  --color-muted-foreground: var(--foreground-muted);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-light: var(--accent-light);
+
+  --color-warning: var(--warning);
+  --color-warning-light: var(--warning-light);
+  --color-success: var(--success);
+  --color-success-light: var(--success-light);
+  --color-destructive: var(--destructive);
+  --color-destructive-light: var(--destructive-light);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ring: var(--ring);
+
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+
+  --color-sidebar-bg: var(--sidebar-bg);
+  --color-sidebar-text: var(--sidebar-text);
+
+  --color-table-header-bg: var(--table-header-bg);
+  --color-table-header-text: var(--table-header-text);
+  --color-table-row-hover: var(--table-row-hover);
+  --color-table-border: var(--table-border);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-slide-in-left: slide-in-left 0.25s ease-out;
+  --animate-slide-in-right: slide-in-right 0.2s ease-out;
+  --animate-slide-down: slide-down 0.2s ease-out;
+  --animate-scale-in: scale-in 0.15s ease-out;
+  --animate-pulse-subtle: pulse-subtle 2s ease-in-out infinite;
+  --animate-spin-slow: spin 3s linear infinite;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-16px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(16px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ---------- Base Styles ---------- */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numbers for currency/numeric columns */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Scrollbar ---------- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* ---------- Focus Ring ---------- */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Print Styles (for Payslips & Certificates) ---------- */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+
+  .no-print,
+  nav,
+  aside,
+  header,
+  footer,
+  .sidebar {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #333;
+    padding: 4px 8px;
+    font-size: 10pt;
+  }
+
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}
+
+.print-only {
+  display: none;
+}
